@@ -9,7 +9,11 @@ const SolutionSection = () => {
   const isInView = useInView(ref, { once: true, amount: 0.3 });
 
   return (
-    <section id="solution" className="py-24 lg:py-32 bg-[var(--pure-white)]">
+    <section id="solution" className="py-24 lg:py-32 bg-gradient-to-br from-white via-[var(--off-white)] to-white relative overflow-hidden">
+      {/* 装飾的な背景要素 */}
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-radial from-[var(--accent-gold)] to-transparent opacity-5 blur-3xl" />
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gradient-radial from-[var(--deep-green)] to-transparent opacity-5 blur-2xl" />
+      
       <div className="container mx-auto px-4 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <motion.div

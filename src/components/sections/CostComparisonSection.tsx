@@ -31,7 +31,7 @@ const CostComparisonSection = () => {
             initial={{ opacity: 0, x: -30 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="bg-white p-8 lg:p-10 rounded-lg shadow-md text-center"
+            className="bg-white p-8 lg:p-10 rounded-2xl shadow-xl text-center relative overflow-hidden group hover:shadow-2xl transition-all duration-300"
           >
             <p className="text-sm font-medium tracking-wider uppercase text-[var(--warm-gray)] mb-2">
               Before
@@ -62,7 +62,7 @@ const CostComparisonSection = () => {
             initial={{ opacity: 0, x: 30 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="bg-white p-8 lg:p-10 rounded-lg shadow-md text-center border-2 border-[var(--accent-gold)]"
+            className="bg-gradient-to-br from-white to-[var(--off-white)] p-8 lg:p-10 rounded-2xl shadow-2xl shadow-[var(--accent-gold)]/20 text-center border-2 border-[var(--accent-gold)] relative overflow-hidden group hover:scale-105 transition-all duration-300"
           >
             <p className="text-sm font-medium tracking-wider uppercase text-[var(--warm-gray)] mb-2">
               After

@@ -32,15 +32,17 @@ const Header = () => {
       transition={{ duration: 0.5 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-white/98 backdrop-blur-lg shadow-lg'
-          : 'bg-white/5 backdrop-blur-sm'
+          ? 'bg-white/95 backdrop-blur-2xl shadow-2xl border-b border-[var(--pale-gray)]'
+          : 'bg-[var(--primary-black)]/20 backdrop-blur-xl border-b border-white/10'
       }`}
     >
       <nav className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-24">
           <Link
             href="/"
-            className="font-display text-xl font-medium tracking-wider text-[var(--primary-black)] hover:text-accent-gold transition-colors"
+            className={`font-display text-xl font-medium tracking-wider transition-colors ${
+              isScrolled ? 'text-[var(--primary-black)] hover:text-accent-gold' : 'text-white hover:text-accent-gold'
+            }`}
           >
             Mother Vegetable
           </Link>
@@ -51,7 +53,9 @@ const Header = () => {
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="text-sm font-normal tracking-wider uppercase text-[var(--soft-black)] hover:text-accent-gold transition-colors relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[1px] after:bg-[var(--accent-gold)] after:transition-all hover:after:w-full"
+                  className={`text-sm font-normal tracking-wider uppercase transition-colors relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[1px] after:bg-[var(--accent-gold)] after:transition-all hover:after:w-full ${
+                    isScrolled ? 'text-[var(--soft-black)] hover:text-accent-gold' : 'text-white/80 hover:text-white'
+                  }`}
                 >
                   {link.label}
                 </Link>
