@@ -6,7 +6,7 @@ import HeroBackground from './HeroBackground';
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-gradient-to-b from-[var(--pure-white)] to-[var(--off-white)]">
+    <section className="relative min-h-screen flex items-center justify-center pt-32 pb-20 overflow-hidden bg-gradient-to-b from-[var(--pure-white)] to-[var(--off-white)]">
       <HeroBackground />
       
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
@@ -24,7 +24,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="font-display text-5xl md:text-6xl lg:text-7xl font-normal leading-tight text-[var(--primary-black)] mb-4"
+            className="font-display text-5xl md:text-6xl lg:text-7xl font-normal leading-[1.2] text-[var(--primary-black)] mb-8"
           >
             いつもの食事に、
             <br />

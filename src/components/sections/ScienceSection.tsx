@@ -32,7 +32,7 @@ const ScienceSection = () => {
   const isInView = useInView(ref, { once: true, amount: 0.3 });
 
   return (
-    <section className="py-24 lg:py-32 bg-gradient-to-b from-white to-[var(--off-white)]">
+    <section className="py-24 lg:py-32 bg-[var(--charcoal)] text-white">
       <div className="container mx-auto px-4 lg:px-8">
         <motion.div
           ref={ref}
@@ -41,10 +41,10 @@ const ScienceSection = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-normal text-[var(--primary-black)] mb-4">
+          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-normal text-white mb-4">
             驚異の栄養価
           </h2>
-          <p className="font-japanese text-lg text-[var(--warm-gray)]">
+          <p className="font-japanese text-lg text-[var(--light-gray)]">
             一般的な食品と比較した、圧倒的な栄養密度
           </p>
         </motion.div>
@@ -61,10 +61,10 @@ const ScienceSection = () => {
               <div className="font-number text-5xl lg:text-6xl font-bold text-accent-gold mb-4 flex items-center justify-center h-20">
                 {item.value}
               </div>
-              <p className="font-japanese font-medium text-lg text-[var(--soft-black)] mb-2">
+              <p className="font-japanese font-medium text-lg text-white mb-2">
                 {item.name}
               </p>
-              <p className="font-japanese text-sm text-[var(--warm-gray)]">
+              <p className="font-japanese text-sm text-[var(--light-gray)]">
                 {item.comparison}
               </p>
             </motion.div>

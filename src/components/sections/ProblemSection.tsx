@@ -27,7 +27,7 @@ const ProblemSection = () => {
   const isInView = useInView(ref, { once: true, amount: 0.3 });
 
   return (
-    <section id="problem" className="py-24 lg:py-32 bg-[var(--off-white)]">
+    <section id="problem" className="py-24 lg:py-32 bg-[var(--primary-black)] text-white">
       <div className="container mx-auto px-4 lg:px-8">
         <motion.div
           ref={ref}
@@ -36,10 +36,10 @@ const ProblemSection = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-normal text-[var(--primary-black)] mb-4">
+          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-normal text-white mb-4">
             健康的な食生活の、3つの壁
           </h2>
-          <p className="font-japanese text-lg text-[var(--warm-gray)]">
+          <p className="font-japanese text-lg text-[var(--light-gray)]">
             誰もが直面する、栄養バランスの課題
           </p>
         </motion.div>
@@ -55,14 +55,14 @@ const ProblemSection = () => {
             >
               <div className="font-number text-7xl lg:text-8xl font-bold text-transparent mb-6 h-24 flex items-center justify-center"
                    style={{
-                     WebkitTextStroke: '2px var(--pale-gray)',
+                     WebkitTextStroke: '2px var(--accent-gold)',
                    }}>
                 {problem.number}
               </div>
-              <h3 className="font-japanese text-xl lg:text-2xl font-medium text-[var(--soft-black)] mb-4">
+              <h3 className="font-japanese text-xl lg:text-2xl font-medium text-white mb-4">
                 {problem.title}
               </h3>
-              <p className="font-japanese text-sm lg:text-base text-[var(--warm-gray)] leading-relaxed">
+              <p className="font-japanese text-sm lg:text-base text-[var(--light-gray)] leading-relaxed">
                 {problem.description}
               </p>
             </motion.div>
