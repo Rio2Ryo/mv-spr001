@@ -1,36 +1,79 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Mother Vegetable - 高級栄養補助食品ランディングページ
 
-## Getting Started
+35億年前から存在する地球最古の生命体から抽出した、完全栄養補助食品「Mother Vegetable」のランディングページです。
 
-First, run the development server:
+## 技術スタック
+
+- **フレームワーク**: Next.js 15.4.2 (App Router)
+- **言語**: TypeScript
+- **スタイリング**: Tailwind CSS
+- **アニメーション**: Framer Motion
+- **フォント**: 
+  - Cormorant Garamond (ディスプレイ用)
+  - Montserrat (本文用)
+  - Noto Sans JP (日本語用)
+  - Inter (数字用)
+
+## 開発環境のセットアップ
 
 ```bash
+# 依存関係のインストール
+npm install
+
+# 開発サーバーの起動
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# プロダクションビルド
+npm run build
+
+# プロダクションサーバーの起動
+npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Vercelへのデプロイ
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+このプロジェクトはVercelへのデプロイに最適化されています。
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. [Vercel](https://vercel.com)にアクセスしてアカウントを作成
+2. GitHubリポジトリと連携
+3. 新しいプロジェクトをインポート
+4. ビルド設定はデフォルトのままでOK
+5. デプロイボタンをクリック
 
-## Learn More
+## プロジェクト構成
 
-To learn more about Next.js, take a look at the following resources:
+```
+src/
+├── app/
+│   ├── layout.tsx      # ルートレイアウト
+│   ├── page.tsx        # ホームページ
+│   └── globals.css     # グローバルスタイル
+└── components/
+    ├── layout/
+    │   ├── Header.tsx  # ヘッダーコンポーネント
+    │   └── Footer.tsx  # フッターコンポーネント
+    └── sections/
+        ├── HeroSection.tsx           # ヒーローセクション
+        ├── HeroBackground.tsx        # ヒーロー背景アニメーション
+        ├── ProblemSection.tsx        # 問題提起セクション
+        ├── SolutionSection.tsx       # ソリューションセクション
+        ├── UsageSection.tsx          # 使い方セクション
+        ├── CostComparisonSection.tsx # コスト比較セクション
+        ├── ScienceSection.tsx        # 栄養価セクション
+        ├── BenefitsSection.tsx       # ベネフィットセクション
+        ├── TestimonialsSection.tsx   # お客様の声セクション
+        └── CTASection.tsx            # CTAセクション
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 主な機能
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- レスポンシブデザイン（モバイル・タブレット・デスクトップ対応）
+- スムーズスクロールアニメーション
+- SVG背景アニメーション
+- インタラクティブなホバーエフェクト
+- 最適化されたフォントローディング
+- SEO最適化
 
-## Deploy on Vercel
+## ライセンス
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+© 2024 Mother Vegetable. All rights reserved.
