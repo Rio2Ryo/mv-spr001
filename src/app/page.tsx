@@ -1,14 +1,17 @@
+import dynamic from 'next/dynamic';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
-import HeroSection from '@/components/sections/HeroSection';
-import ProblemSection from '@/components/sections/ProblemSection';
-import SolutionSection from '@/components/sections/SolutionSection';
-import UsageSection from '@/components/sections/UsageSection';
-import CostComparisonSection from '@/components/sections/CostComparisonSection';
-import ScienceSection from '@/components/sections/ScienceSection';
-import BenefitsSection from '@/components/sections/BenefitsSection';
-import TestimonialsSection from '@/components/sections/TestimonialsSection';
-import CTASection from '@/components/sections/CTASection';
+import { HeroSection } from '@/components/sections/hero';
+
+// 動的インポートでコード分割
+const ProblemSection = dynamic(() => import('@/components/sections/ProblemSection'));
+const SolutionSection = dynamic(() => import('@/components/sections/SolutionSection'));
+const UsageSection = dynamic(() => import('@/components/sections/UsageSection'));
+const CostComparisonSection = dynamic(() => import('@/components/sections/CostComparisonSection'));
+const ScienceSection = dynamic(() => import('@/components/sections/ScienceSection'));
+const BenefitsSection = dynamic(() => import('@/components/sections/BenefitsSection'));
+const TestimonialsSection = dynamic(() => import('@/components/sections/TestimonialsSection'));
+const CTASection = dynamic(() => import('@/components/sections/CTASection'));
 
 export default function Home() {
   return (
