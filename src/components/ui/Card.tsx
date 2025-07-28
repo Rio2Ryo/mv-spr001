@@ -26,7 +26,7 @@ export const Card = ({
   onClick,
 }: CardProps) => {
   const baseClasses = `
-    relative rounded-2xl p-8 lg:p-10
+    relative rounded-2xl p-6 sm:p-8 lg:p-10
     transition-all duration-300
     ${variants[variant]}
     ${hover ? 'hover:shadow-2xl hover:scale-[1.02]' : ''}

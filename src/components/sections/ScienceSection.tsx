@@ -3,6 +3,9 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
+import { Section } from '@/components/ui/Section';
+import { Container } from '@/components/ui/Container';
+import { Display, Lead, Body, Caption } from '@/components/ui/Typography';
 
 const nutritionData = [
   {
@@ -32,24 +35,24 @@ const ScienceSection = () => {
   const isInView = useInView(ref, { once: true, amount: 0.3 });
 
   return (
-    <section className="py-24 lg:py-32 bg-[var(--charcoal)] text-white">
-      <div className="container mx-auto px-4 lg:px-8">
+    <Section className="bg-[var(--charcoal)] text-white" variant="dark" padding="lg">
+      <Container>
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
         >
-          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-normal text-white mb-4">
+          <Display className="text-white mb-4">
             驚異の栄養価
-          </h2>
-          <p className="font-japanese text-lg text-[var(--light-gray)]">
+          </Display>
+          <Lead className="text-[var(--light-gray)]">
             一般的な食品と比較した、圧倒的な栄養密度
-          </p>
+          </Lead>
         </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12 max-w-4xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 lg:gap-12 max-w-4xl mx-auto">
           {nutritionData.map((item, index) => (
             <motion.div
               key={item.name}
@@ -58,20 +61,20 @@ const ScienceSection = () => {
               transition={{ duration: 0.8, delay: index * 0.1 }}
               className="text-center"
             >
-              <div className="font-number text-5xl lg:text-6xl font-bold text-accent-gold mb-4 flex items-center justify-center h-20">
+              <div className="font-number text-4xl sm:text-5xl lg:text-6xl font-bold text-accent-gold mb-4 flex items-center justify-center h-16 sm:h-20">
                 {item.value}
               </div>
-              <p className="font-japanese font-medium text-lg text-white mb-2">
+              <Body className="font-medium text-white mb-2">
                 {item.name}
-              </p>
-              <p className="font-japanese text-sm text-[var(--light-gray)]">
+              </Body>
+              <Caption className="text-[var(--light-gray)]">
                 {item.comparison}
-              </p>
+              </Caption>
             </motion.div>
           ))}
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 };
 

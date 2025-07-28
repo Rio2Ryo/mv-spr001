@@ -22,13 +22,17 @@ const problems = [
   },
 ];
 
+import { Section } from '@/components/ui/Section';
+import { Container } from '@/components/ui/Container';
+import { Heading, Body } from '@/components/ui/Typography';
+
 const ProblemSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.3 });
 
   return (
-    <section id="problem" className="py-24 lg:py-32 bg-[var(--primary-black)] text-white">
-      <div className="container mx-auto px-4 lg:px-8">
+    <Section id="problem" variant="dark" padding="lg">
+      <Container>
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 30 }}
@@ -36,15 +40,15 @@ const ProblemSection = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-normal text-white mb-4">
+          <Heading className="text-white mb-4">
             健康的な食生活の、3つの壁
-          </h2>
-          <p className="font-japanese text-lg text-[var(--light-gray)]">
+          </Heading>
+          <Body className="text-[var(--light-gray)]">
             誰もが直面する、栄養バランスの課題
-          </p>
+          </Body>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8 lg:gap-12 max-w-6xl mx-auto">
+        <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 max-w-6xl mx-auto">
           {problems.map((problem, index) => (
             <motion.div
               key={problem.number}
@@ -53,23 +57,23 @@ const ProblemSection = () => {
               transition={{ duration: 0.8, delay: index * 0.2 }}
               className="text-center"
             >
-              <div className="font-number text-7xl lg:text-8xl font-bold text-transparent mb-6 h-24 flex items-center justify-center"
+              <div className="font-number text-6xl sm:text-7xl lg:text-8xl font-bold text-transparent mb-6 h-20 sm:h-24 flex items-center justify-center"
                    style={{
                      WebkitTextStroke: '2px var(--accent-gold)',
                    }}>
                 {problem.number}
               </div>
-              <h3 className="font-japanese text-xl lg:text-2xl font-medium text-white mb-4">
+              <h3 className="font-japanese text-lg sm:text-xl lg:text-2xl font-medium text-white mb-4">
                 {problem.title}
               </h3>
-              <p className="font-japanese text-sm lg:text-base text-[var(--light-gray)] leading-relaxed">
+              <p className="font-japanese text-sm sm:text-base text-[var(--light-gray)] leading-relaxed">
                 {problem.description}
               </p>
             </motion.div>
           ))}
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 };
 

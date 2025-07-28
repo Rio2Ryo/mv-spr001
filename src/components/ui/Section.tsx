@@ -17,10 +17,10 @@ const variants = {
 };
 
 const paddings = {
-  sm: 'py-12 lg:py-16',
-  md: 'py-16 lg:py-24',
-  lg: 'py-24 lg:py-32',
-  xl: 'py-32 lg:py-40',
+  sm: 'py-12 sm:py-14 md:py-16',
+  md: 'py-16 sm:py-20 md:py-24',
+  lg: 'py-20 sm:py-24 md:py-28 lg:py-32',
+  xl: 'py-24 sm:py-28 md:py-32 lg:py-40',
 };
 
 export const Section = ({

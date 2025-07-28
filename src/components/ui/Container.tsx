@@ -20,7 +20,7 @@ export const Container = ({
   size = 'xl',
 }: ContainerProps) => {
   return (
-    <div className={`container mx-auto px-4 lg:px-8 ${sizes[size]} ${className}`}>
+    <div className={`w-full mx-auto px-4 sm:px-6 md:px-8 ${sizes[size]} ${className}`}>
       {children}
     </div>
   );

@@ -3,6 +3,9 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
+import { Section } from '@/components/ui/Section';
+import { Container } from '@/components/ui/Container';
+import { Display, Lead, Body, Caption } from '@/components/ui/Typography';
 
 const testimonials = [
   {
@@ -27,54 +30,54 @@ const TestimonialsSection = () => {
   const isInView = useInView(ref, { once: true, amount: 0.3 });
 
   return (
-    <section className="py-24 lg:py-32 bg-white">
-      <div className="container mx-auto px-4 lg:px-8">
+    <Section className="bg-white" padding="lg">
+      <Container>
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
         >
-          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-normal text-[var(--primary-black)] mb-4">
+          <Display className="text-[var(--primary-black)] mb-4">
             愛用者の声
-          </h2>
-          <p className="font-japanese text-lg text-[var(--warm-gray)]">
+          </Display>
+          <Lead className="text-[var(--warm-gray)]">
             実際にご使用いただいている方々の体験談
-          </p>
+          </Lead>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8 lg:gap-12 max-w-6xl mx-auto">
+        <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 lg:gap-12 max-w-6xl mx-auto">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={testimonial.name}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: index * 0.2 }}
-              className="relative bg-[var(--off-white)] p-8 lg:p-10 hover:transform hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
+              className="relative bg-[var(--off-white)] p-6 sm:p-8 lg:p-10 hover:transform hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
             >
               {/* Quote mark */}
-              <div className="absolute top-4 left-4 text-6xl lg:text-8xl font-display text-accent-gold opacity-20 leading-none">
+              <div className="absolute top-4 left-4 text-5xl sm:text-6xl lg:text-8xl font-display text-accent-gold opacity-20 leading-none">
                 &ldquo;
               </div>
 
-              <p className="font-japanese text-sm lg:text-base text-[var(--warm-gray)] leading-relaxed italic relative z-10 mb-8">
+              <Body className="text-[var(--warm-gray)] leading-relaxed italic relative z-10 mb-6 sm:mb-8">
                 {testimonial.content}
-              </p>
+              </Body>
 
               <div>
-                <p className="font-japanese text-sm font-medium text-[var(--soft-black)]">
+                <Body className="font-medium text-[var(--soft-black)]">
                   {testimonial.name}
-                </p>
-                <p className="font-japanese text-xs text-[var(--mid-gray)] mt-1">
+                </Body>
+                <Caption className="text-[var(--mid-gray)] mt-1">
                   {testimonial.role}
-                </p>
+                </Caption>
               </div>
             </motion.div>
           ))}
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 };
 

@@ -9,12 +9,12 @@ export const HeroVisual = () => {
       initial={{ opacity: 0, scale: 0.9 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.8, delay: 0.2 }}
-      className="relative h-[500px] lg:h-[600px] xl:h-[700px]"
+      className="relative h-[400px] sm:h-[450px] md:h-[500px] lg:h-[600px] xl:h-[700px]"
     >
       {/* 背景の装飾要素 */}
       <div className="absolute inset-0 pointer-events-none">
         {/* グロー効果 */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px]">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] md:w-[500px] md:h-[500px] lg:w-[600px] lg:h-[600px]">
           <div className="absolute inset-0 bg-gradient-radial from-[var(--accent-gold)] to-transparent opacity-10 blur-3xl animate-pulse" />
           <div className="absolute inset-0 bg-gradient-radial from-[var(--deep-green)] to-transparent opacity-10 blur-3xl animate-pulse animation-delay-2000" />
         </div>

@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import { Container } from '@/components/ui/Container';
+import { Heading, Caption } from '@/components/ui/Typography';
 
 const Footer = () => {
   const footerLinks = [
@@ -10,20 +12,20 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-[var(--primary-black)] text-white py-16 lg:py-20">
-      <div className="container mx-auto px-4 lg:px-8">
+    <footer className="bg-[var(--primary-black)] text-white py-12 sm:py-16 lg:py-20">
+      <Container>
         <div className="text-center">
-          <h3 className="font-display text-2xl lg:text-3xl font-normal mb-8">
+          <Heading className="text-white mb-6 sm:mb-8">
             Mother Vegetable
-          </h3>
+          </Heading>
           
-          <nav className="mb-8">
-            <ul className="flex flex-wrap justify-center gap-6 lg:gap-8">
+          <nav className="mb-6 sm:mb-8">
+            <ul className="flex flex-wrap justify-center gap-4 sm:gap-6 lg:gap-8">
               {footerLinks.map((link) => (
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-sm text-[var(--light-gray)] hover:text-accent-gold transition-colors"
+                    className="text-xs sm:text-sm text-[var(--light-gray)] hover:text-accent-gold transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -32,11 +34,11 @@ const Footer = () => {
             </ul>
           </nav>
           
-          <p className="text-xs text-[var(--warm-gray)]">
+          <Caption className="text-[var(--warm-gray)]">
             © 2024 Mother Vegetable. All rights reserved.
-          </p>
+          </Caption>
         </div>
-      </div>
+      </Container>
     </footer>
   );
 };

@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { Container } from '@/components/ui/Container';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -36,11 +37,11 @@ const Header = () => {
           : 'bg-[var(--primary-black)]/20 backdrop-blur-xl border-b border-white/10'
       }`}
     >
-      <nav className="container mx-auto px-4 lg:px-8">
-        <div className="flex items-center justify-between h-24">
+      <Container>
+        <div className="flex items-center justify-between h-16 sm:h-20 md:h-24">
           <Link
             href="/"
-            className={`font-display text-xl font-medium tracking-wider transition-colors ${
+            className={`font-display text-lg sm:text-xl font-medium tracking-wider transition-colors ${
               isScrolled ? 'text-[var(--primary-black)] hover:text-accent-gold' : 'text-white hover:text-accent-gold'
             }`}
           >
@@ -70,17 +71,23 @@ const Header = () => {
             aria-label="Toggle mobile menu"
           >
             <span
-              className={`block w-full h-0.5 bg-[var(--primary-black)] transition-all ${
+              className={`block w-full h-0.5 transition-all ${
+                isScrolled ? 'bg-[var(--primary-black)]' : 'bg-white'
+              } ${
                 isMobileMenuOpen ? 'rotate-45 translate-y-2.5' : ''
               }`}
             />
             <span
-              className={`block w-full h-0.5 bg-[var(--primary-black)] transition-all ${
+              className={`block w-full h-0.5 transition-all ${
+                isScrolled ? 'bg-[var(--primary-black)]' : 'bg-white'
+              } ${
                 isMobileMenuOpen ? 'opacity-0' : ''
               }`}
             />
             <span
-              className={`block w-full h-0.5 bg-[var(--primary-black)] transition-all ${
+              className={`block w-full h-0.5 transition-all ${
+                isScrolled ? 'bg-[var(--primary-black)]' : 'bg-white'
+              } ${
                 isMobileMenuOpen ? '-rotate-45 -translate-y-2.5' : ''
               }`}
             />
@@ -100,7 +107,9 @@ const Header = () => {
                 <Link
                   href={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="block text-sm font-normal tracking-wider uppercase text-[var(--soft-black)] hover:text-accent-gold transition-colors"
+                  className={`block text-sm font-normal tracking-wider uppercase transition-colors ${
+                    isScrolled ? 'text-[var(--soft-black)] hover:text-accent-gold' : 'text-white hover:text-accent-gold'
+                  }`}
                 >
                   {link.label}
                 </Link>
@@ -108,7 +117,7 @@ const Header = () => {
             ))}
           </ul>
         </motion.div>
-      </nav>
+      </Container>
     </motion.header>
   );
 };
